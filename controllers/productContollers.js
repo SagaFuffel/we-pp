@@ -2,7 +2,8 @@ const mongoose = require("mongoose");
 const Product = require("../models/productModel");
 
 const createProduct = async (req, res) => {
-    const { productName, category, description, price, inventoryCount, supplier } = req.body
+    const user_id = req.user._id
+    const { productName, category, description, price, inventoryCount, supplier } = req.body, user_id;
 
     try {
         const product = await Product.create({ productName, category, description, price, inventoryCount, supplier})
