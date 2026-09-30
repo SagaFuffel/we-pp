@@ -5,19 +5,19 @@ const Schema = mongoose.Schema;
 const supplierSchema = new Schema({
   name: {
     type: String,
-    require: true,
+    required: true,
   },
   contactEmail: {
     type: String,
-    require: true,
+    required: true,
   },
   contactPhone: {
     type: String,
-    require: true,
+    required: true,
   },
   isVerified: {
     type: Boolean,
-    require: true,
+    required: true,
   },
 });
 
@@ -25,32 +25,32 @@ const productSchema = new Schema(
   {
     user_id: {
       type: mongoose.Schema.Types.ObjectId,
-      require: true,
+      required: true,
       ref: "User",
     },
     productName: {
       type: String,
-      require: true,
+      required: true,
     },
     category: {
       type: String,
-      require: true,
+      required: true,
     },
     description: {
       type: String,
-      require: true,
+      required: true,
     },
     price: {
       type: Number,
-      require: true,
+      required: true,
     },
     inventoryCount: {
       type: Number,
-      require: true,
+      required: true,
     },
     supplier: {
       type: supplierSchema,
-      require: true,
+      required: true,
     },
   },
   { timestamps: true },
