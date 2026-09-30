@@ -14,7 +14,6 @@ const supplierSchema = new Schema({
   contactPhone: {
     type: String,
     require: true,
-    match: /^\d{10,}$/,
   },
   isVerified: {
     type: Boolean,
