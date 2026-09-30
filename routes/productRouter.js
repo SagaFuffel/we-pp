@@ -7,6 +7,9 @@ const {
     getProductById,
     deleteProduct
 } = require("../controllers/productContollers")
+const requireAuth = require("../middleware/requireAuth")
+
+router.use(requireAuth)
 
 router.get("/", getAllProducts);
 
