@@ -11,10 +11,10 @@ const generateToken = (_id) => {
 }
 
 const signUpUser = async (req, res) => {
-    const {name, email, password, phone_number, gender, date_of_birth, membership_status,} = req.body;
+    const {fullName, email, password, phoneNumber, gender, date_of_birth, accountType} = req.body;
 
     try {
-        if (!name || !email || !password || !phone_number || !gender || !date_of_birth || !membership_status);
+        if (!fullName || !email || !password || !phoneNumber || !gender || !date_of_birth || !accountType);
         {
             res.status(400);
             throw new Error("Please fill all sections.");
@@ -34,7 +34,7 @@ const signUpUser = async (req, res) => {
         
         //create with hash
         const user = await User.create({
-            name, email, password:hashed, phone_number, gender, date_of_birth, membership_status,
+            fullName, email, password:hashed, phoneNumber, gender, date_of_birth, accountType,
         });
 
         if (user){

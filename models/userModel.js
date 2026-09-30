@@ -3,7 +3,7 @@ const Schema = mongoose.schema;
 
 const userSchema = new Schema(
     {
-        name: {
+        fullName: {
             type: String,
             required: true,
         },
@@ -30,11 +30,6 @@ const userSchema = new Schema(
         accountType: {
             type: String,
             required: true,
-        },
-        user_id: {
-            type: mongoose.Schema.Types.ObjectId,
-            required: true,
-            ref: "user"
         },
     },
     {timestamps: true, versionKey: false} 
