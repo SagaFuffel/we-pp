@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-import Product from "../models/productModel";
+const Product = require("../models/productModel");
 
 const createProduct = async (req, res) => {
     const { productName, category, description, price, inventoryCount, supplier } = req.body
