@@ -3,10 +3,10 @@ const Product = require("../models/productModel");
 
 const createProduct = async (req, res) => {
     const user_id = req.user._id
-    const { productName, category, description, price, inventoryCount, supplier } = req.body, user_id;
+    const { productName, category, description, price, inventoryCount, supplier } = req.body;
 
     try {
-        const product = await Product.create({ productName, category, description, price, inventoryCount, supplier})
+        const product = await Product.create({user_id, productName, category, description, price, inventoryCount, supplier})
         res.status(201).json(product);
     } catch (error) {
         res.status(400).json({message: error.message})
