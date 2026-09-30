@@ -9,11 +9,11 @@ const {
 } = require("../controllers/productContollers")
 const requireAuth = require("../middleware/requireAuth")
 
-router.use(requireAuth)
-
 router.get("/", getAllProducts);
 
 router.get("/:id", getProductById);
+
+router.use(requireAuth)
 
 router.post("/", createProduct);
 
