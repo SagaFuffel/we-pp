@@ -16,8 +16,20 @@ const userSchema = new Schema(
             type: String,
             required: true,
         },
-        phone_number: {
+        phoneNumber: {
             type: String
+        },
+        gender: {
+            type: String,
+            required: true,
+        },
+        date_of_birth: {
+            type: String,
+            required: true,
+        },
+        accountType: {
+            type: String,
+            required: true,
         },
         user_id: {
             type: mongoose.Schema.Types.ObjectId,
@@ -25,7 +37,7 @@ const userSchema = new Schema(
             ref: "user"
         },
     },
-    {timestamps: true} 
+    {timestamps: true, versionKey: false} 
 );
 
 module.exports = mongoose.model("User", userSchema);
