@@ -14,7 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use(requestLogger);
 
-app.use('/api/products', productRouter);
+app.use("/api/products", productRouter);
 app.use("/api/users", userRouter);
 
 app.use(unknownEndpoint);
